@@ -50,6 +50,7 @@ const StepThree = (props: IBaseFormStepProps) => {
       setOptions(dishesOptions);
     } catch (e) {
       console.log(e);
+      console.log(stepKey);
     }
   };
 

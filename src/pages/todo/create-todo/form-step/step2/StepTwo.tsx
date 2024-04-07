@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { IBaseFormStepProps } from '../../../../../common/form-step/FormStep.model';
-import Select, { DefaultOptionType } from 'antd/es/select';
 import { Form } from 'antd';
-import { useCreateTodo } from '../../context/CreateToDoContext';
+import Select, { DefaultOptionType } from 'antd/es/select';
+import { useEffect, useState } from 'react';
+import { IBaseFormStepProps } from '../../../../../common/form-step/FormStep.model';
 import { IDishes } from '../../CreateTodo.model';
+import { useCreateTodo } from '../../context/CreateToDoContext';
 
 const StepTwo = (props: IBaseFormStepProps) => {
   const { stepKey } = props;
@@ -69,6 +69,7 @@ const StepTwo = (props: IBaseFormStepProps) => {
     } catch (e) {
       // should show handle error here
       console.log(e);
+      console.log(stepKey);
       // close loading
     }
   };
