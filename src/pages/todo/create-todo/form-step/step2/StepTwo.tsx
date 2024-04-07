@@ -14,7 +14,7 @@ const StepTwo = (props: IBaseFormStepProps) => {
     try {
       // should show loading
       // call api
-      await fetch('../../../../data/dishes.json')
+      await fetch('data/dishes.json')
         .then((rs) => rs.json())
         .then((data) => {
           const dishes: IDishes[] = data?.dishes ?? [];
