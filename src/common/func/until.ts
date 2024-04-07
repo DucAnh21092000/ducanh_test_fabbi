@@ -17,7 +17,7 @@ function uuidv4() {
 }
 
 const useBoolean = (initialValue?: boolean): [boolean, () => void, () => void, () => void] => {
-  const [isTrue, setIsTrue] = useState<boolean>(false);
+  const [isTrue, setIsTrue] = useState<boolean>(initialValue ?? false);
   const setTrue = () => {
     setIsTrue(true);
   };

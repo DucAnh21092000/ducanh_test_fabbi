@@ -2,6 +2,7 @@ import { Form, InputNumber, Select } from 'antd';
 import { IBaseFormStepProps } from '../../../../../common/form-step/FormStep.model';
 
 const StepOne = (props: IBaseFormStepProps) => {
+  const { stepKey } = props;
   const mealOptions = [
     {
       label: 'Lunch',
@@ -22,7 +23,7 @@ const StepOne = (props: IBaseFormStepProps) => {
     ],
   };
   return (
-    <div>
+    <div key={stepKey}>
       <Form.Item name="meal" label="Please Select a meal" required rules={rules.meal}>
         <Select options={mealOptions} placeholder="Select an option" />
       </Form.Item>

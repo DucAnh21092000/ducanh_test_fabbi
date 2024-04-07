@@ -8,9 +8,8 @@ import useUtils from '../../../../../common/func/until';
 import { useCreateTodo } from '../../context/CreateToDoContext';
 import { IListDishes } from '../../CreateTodo.model';
 
-
-
 const StepThree = (props: IBaseFormStepProps) => {
+  const { stepKey } = props;
   const { uuidv4 } = useUtils();
   const step3Form = useFormInstance();
 
@@ -25,7 +24,7 @@ const StepThree = (props: IBaseFormStepProps) => {
   const handleCheckDuplicateDish = (option: string) => {
     const formValue = step3Form.getFieldsValue();
     const temp = Object.entries(formValue as Record<string, { dishes: string }>).map(
-      ([key, value]) => {
+      ([_, value]) => {
         return value?.dishes;
       }
     );
@@ -63,7 +62,7 @@ const StepThree = (props: IBaseFormStepProps) => {
     setListDishes(deteledList);
   };
   return (
-    <div>
+    <div key={stepKey}>
       <Col>
         {listDishes.map((item) => (
           <Row key={item.id} gutter={24}>
