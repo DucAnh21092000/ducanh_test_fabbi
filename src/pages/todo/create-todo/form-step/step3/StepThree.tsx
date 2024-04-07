@@ -62,7 +62,7 @@ const StepThree = (props: IBaseFormStepProps) => {
     setListDishes(deteledList);
   };
   return (
-    <div key={stepKey}>
+    <div>
       <Col>
         {listDishes.map((item) => (
           <Row key={item.id} gutter={24}>

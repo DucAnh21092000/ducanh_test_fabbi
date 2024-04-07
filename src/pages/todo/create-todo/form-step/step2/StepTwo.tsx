@@ -1,9 +1,9 @@
-import { Form } from 'antd';
-import Select, { DefaultOptionType } from 'antd/es/select';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { IBaseFormStepProps } from '../../../../../common/form-step/FormStep.model';
-import { IDishes } from '../../CreateTodo.model';
+import Select, { DefaultOptionType } from 'antd/es/select';
+import { Form } from 'antd';
 import { useCreateTodo } from '../../context/CreateToDoContext';
+import { IDishes } from '../../CreateTodo.model';
 
 const StepTwo = (props: IBaseFormStepProps) => {
   const { stepKey } = props;
@@ -78,7 +78,7 @@ const StepTwo = (props: IBaseFormStepProps) => {
   }, []);
 
   return (
-    <div key={stepKey}>
+    <div>
       <Form.Item
         name="restaurant"
         label="Please Select a Restaurant"
