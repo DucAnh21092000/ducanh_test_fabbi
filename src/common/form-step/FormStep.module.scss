@@ -1,0 +1,60 @@
+.formStep {
+  .formHeader {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 5px;
+    .headerItem {
+      cursor: pointer;
+      position: relative;
+      width: 100%;
+      &:last-child {
+        width: fit-content;
+      }
+      &::after {
+        border-bottom: 1px solid #ccc;
+        content: '';
+        position: absolute;
+        width: calc(100% - 42px);
+        right: 0;
+        top: 35%;
+      }
+      &:last-child::after {
+        display: none;
+      }
+
+      .itemNumber {
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+      }
+      &:hover {
+        color: rgb(14, 124, 126);
+      }
+    }
+
+    .active {
+      &::after {
+        border-bottom: 1px solid aqua;
+      }
+      .itemNumber {
+        background-color: aqua;
+      }
+      .itemContent {
+        font-weight: 600;
+        color: rgb(22, 107, 144);
+      }
+    }
+    .inactive {
+      background-color: #ccc;
+    }
+  }
+  .formFooter {
+    padding: 16px;
+    gap: 8px;
+    display: flex;
+  }
+}
